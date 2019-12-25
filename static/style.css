@@ -68,3 +68,7 @@ form{
    margin-top: 50px;
 
 }
+
+.input-group input {
+	width:40%;
+}
