@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>KNN Classification</title>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div id="head">
+				<h1>KNN Classification on Iris</h1>
+			</div>
+			<div id="content">
+				<h3>Enter your values</h3>
+			</div>
+			<div class="form">
+				<form action="/predict" method="POST">
+					<div class="input-group">
+						<label>Sepal Length</label><br>
+					    <input type="text" name="sepal_length" required="True">
+					</div>
+					<div class="input-group">
+						<label>Sepal Width</label><br>
+					    <input type="text" name="sepal_width" required="True">
+					</div>
+					<div class="input-group">
+						<label>Petal Length</label><br>
+					    <input type="text" name="petal_length" required="True">
+					</div>
+					<div class="input-group">
+						<label>Petal Width</label><br>
+					    <input type="text" name="petal_width" required="True">
+					</div>
+					<div class="btn-group">
+						<input type="submit" id="btn" value="Predict Class">
+					</div>
+			 </form>
+			</div>
+
+			<div id="result">
+				<div id="res">
+					<span>Predicted Class:</span>
+					<h2>{{predicted}}</h2>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
