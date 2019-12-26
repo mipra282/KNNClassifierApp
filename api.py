@@ -19,7 +19,7 @@ def predict():
 	import os
 
 
-	sepal_length = request.form['sepal_length']
+	'''sepal_length = request.form['sepal_length']
 	sepal_width = request.form['sepal_width']
 	petal_length = request.form['petal_length']
 	petal_width = request.form['petal_width']
@@ -27,12 +27,13 @@ def predict():
 	
 	
 	float_features = [x for x in request.form.values()]
-	final_features = [np.array(float_features)]
+	final_features = [np.array(float_features)]'''
 
 	
 	knn_classifier = joblib.load(os.path.join(os.getcwd(),"knn_model.pkl"))
 
-	predicted_class = knn_classifier.predict(final_features)
+	'''predicted_class = knn_classifier.predict(final_features)'''
+	predicted_class = ['Hi']
 	
 
 	return render_template("result.html",predicted = str(predicted_class[0]))
