@@ -11,7 +11,7 @@ app = Flask(__name__)
 def homepage():
 	return render_template("home.html")
 
-@app.route('/', methods=['POST'])
+@app.route('/predict', methods=['POST'])
 def predict():
 	import numpy as np
 
@@ -36,7 +36,7 @@ def predict():
 	#else:
 		#predicted_class = ["Please enter float!"]
 
-	return render_template("home.html",predicted = str(predicted_class[0]))
+	return render_template("result.html",predicted = str(predicted_class[0]))
 
 if __name__ == "__main__":
 	app.run(host='0.0.0.0',port=3000,debug=True)
