@@ -28,12 +28,13 @@ def predict():
 	
 	float_features = [x for x in request.form.values()]
 	final_features = [np.array(float_features)]'''
-
+    
+    final_features = [np.array([12,22,13,44])]
 	
 	knn_classifier = joblib.load(os.path.join(os.getcwd(),"knn_model.pkl"))
 
-	'''predicted_class = knn_classifier.predict(final_features)'''
-	predicted_class = ['Hi']
+	predicted_class = knn_classifier.predict(final_features)
+	
 	
 
 	return render_template("result.html",predicted = str(predicted_class[0]))
