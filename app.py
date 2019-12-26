@@ -4,7 +4,6 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
-import pickle
 from sklearn.externals import joblib 
 
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
