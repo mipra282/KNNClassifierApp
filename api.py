@@ -32,6 +32,8 @@ def predict():
 	final_features = [np.array(float_features)]'''
     
 	final_features = [np.array([12,22,13,44])]
+
+	knn_classfier = None
 	
 	#knn_classifier = joblib.load(os.path.join(os.getcwd(),"knn_model.pkl"))
 	with open('knn_model.pkl', 'rb') as file:
