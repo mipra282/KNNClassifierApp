@@ -16,7 +16,7 @@ def predict():
 	import numpy as np
 
 
-	sepal_length = request.form['sepal_length']
+	'''sepal_length = request.form['sepal_length']
 	sepal_width = request.form['sepal_width']
 	petal_length = request.form['petal_length']
 	petal_width = request.form['petal_width']
@@ -31,7 +31,8 @@ def predict():
 	knn_classifier = joblib.load("knn_model.pkl")
 
 	predicted_class = knn_classifier.predict(final_features)
-	print(predicted_class)
+	print(predicted_class)'''
+	predicted_class = ['Iris']
 
 	#else:
 		#predicted_class = ["Please enter float!"]
