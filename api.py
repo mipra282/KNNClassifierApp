@@ -28,10 +28,11 @@ def predict():
 	final_features = [np.array(float_features)]
 
 	#if (type(sepal_length) == float  and  type(sepal_width) == float and  type(petal_length) == float and  type(petal_width) == float):
-	knn_classifier = joblib.load("knn_model.pkl")
+	knn_classifier = joblib.load("/knn_model.pkl")
 
 	predicted_class = knn_classifier.predict(final_features)
 	print(predicted_class)'''
+	knn_classifier = joblib.load("/knn_model.pkl")
 	predicted_class = ['Iris']
 
 	#else:
