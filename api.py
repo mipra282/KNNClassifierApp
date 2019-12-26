@@ -15,9 +15,10 @@ def homepage():
 @app.route('/predict', methods=['POST'])
 def predict():
 	import numpy as np
-	from sklearn.externals import joblib
+	#from sklearn.externals import joblib
 	import os
 	import time
+	import pickle
 
 
 	'''sepal_length = request.form['sepal_length']
@@ -32,7 +33,11 @@ def predict():
     
 	final_features = [np.array([12,22,13,44])]
 	
-	knn_classifier = joblib.load(os.path.join(os.getcwd(),"knn_model.pkl"))
+	#knn_classifier = joblib.load(os.path.join(os.getcwd(),"knn_model.pkl"))
+	with open('knn_model.pkl', 'rb') as file:
+		knn_classfier = pickle.load(file)
+
+    	
 	print(type(knn_classifier))
 	
 	predicted_class = knn_classifier.predict(final_features)

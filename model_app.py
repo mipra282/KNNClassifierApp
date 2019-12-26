@@ -4,7 +4,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.externals import joblib 
+import pickle
+#from sklearn.externals import joblib 
 
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 
@@ -30,10 +31,11 @@ classifier = KNeighborsClassifier(n_neighbors=5)
 classifier.fit(X_train, y_train)
 
 
+with open('knn_model.pkl', 'wb') as file:
+    pickle.dump(classifier, file)
 
 
-
-joblib.dump(classifier, 'knn_model.pkl')
+#joblib.dump(classifier, 'knn_model.pkl')
 
 y_pred = classifier.predict(X_test)
 print(y_pred)
