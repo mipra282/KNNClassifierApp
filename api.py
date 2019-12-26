@@ -36,7 +36,7 @@ def predict():
 	knn_classifier = None
 	
 	#knn_classifier = joblib.load(os.path.join(os.getcwd(),"knn_model.pkl"))
-	with open('knn_model.pkl', 'rb') as file:
+	with open(os.path.join(os.getcwd(),"knn_model.pkl"), 'rb') as file:
 		knn_classifier = pickle.load(file)
 
     	
