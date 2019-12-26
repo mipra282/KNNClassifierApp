@@ -17,6 +17,7 @@ def predict():
 	import numpy as np
 	from sklearn.externals import joblib
 	import os
+	import time
 
 
 	'''sepal_length = request.form['sepal_length']
@@ -32,6 +33,7 @@ def predict():
 	final_features = [np.array([12,22,13,44])]
 	
 	knn_classifier = joblib.load(os.path.join(os.getcwd(),"knn_model.pkl"))
+	time.sleep(20)
 
 	predicted_class = knn_classifier.predict(final_features)
 	
