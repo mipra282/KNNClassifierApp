@@ -1,5 +1,6 @@
 from flask import Flask,render_template,request
-from sklearn.externals import joblib
+
+
 
 
 app = Flask(__name__)
@@ -14,6 +15,8 @@ def homepage():
 @app.route('/predict', methods=['POST'])
 def predict():
 	import numpy as np
+	from sklearn.externals import joblib
+	import os
 
 
 	'''sepal_length = request.form['sepal_length']
@@ -32,7 +35,7 @@ def predict():
 
 	predicted_class = knn_classifier.predict(final_features)
 	print(predicted_class)'''
-	knn_classifier = joblib.load("/knn_model.pkl")
+	knn_classifier = joblib.load(os.path.join(os.getcwd(),"knn_model.pkl"))
 	predicted_class = ['Iris']
 
 	#else:
