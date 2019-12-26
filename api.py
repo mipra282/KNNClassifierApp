@@ -21,7 +21,7 @@ def predict():
 	import pickle
 
 
-	'''sepal_length = request.form['sepal_length']
+	sepal_length = request.form['sepal_length']
 	sepal_width = request.form['sepal_width']
 	petal_length = request.form['petal_length']
 	petal_width = request.form['petal_width']
@@ -29,9 +29,9 @@ def predict():
 	
 	
 	float_features = [x for x in request.form.values()]
-	final_features = [np.array(float_features)]'''
+	final_features = [np.array(float_features)]
     
-	final_features = [np.array([12,22,13,44])]
+	
 
 	knn_classifier = None
 	
@@ -40,7 +40,7 @@ def predict():
 		knn_classifier = pickle.load(file)
 
     	
-	print(type(knn_classifier))
+	
 	
 	predicted_class = knn_classifier.predict(final_features)
 	
