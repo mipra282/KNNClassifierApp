@@ -29,9 +29,11 @@ X_test = scaler.transform(X_test)
 classifier = KNeighborsClassifier(n_neighbors=5)
 classifier.fit(X_train, y_train)
 
-y_pred = classifier.predict(X_test)
+
 
 
 
 joblib.dump(classifier, 'knn_model.pkl')
 
+y_pred = classifier.predict(X_test)
+print(y_pred)
